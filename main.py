@@ -15,17 +15,15 @@ async def idea(context, arg1, arg2, arg3=""):
   else:
     name=arg3 
     
-  #response = [i for i in re.findall('\[(.*?)\]',layout)] 
-
   myEmbed = discord.Embed(title=arg1, description=arg2, color=0x00ff00)
   myEmbed.set_author(name=name)
-
   await context.message.author.send('Your **{}** idea has been added!'.format(arg1))
+  message = await botTest_channel.send(embed=myEmbed)
+
   
-  
-  sent = await botTest_channel.send(embed=myEmbed)
-  await client.add_reaction(sent, emoji = "\U0001F44D")
-  
+
+  await message.add_reaction(emoji = "\U0001F44D")
+
 @client.command(name='version')
 async def idea(context):
   myEmbed = discord.Embed(title="Current Version", description='The bot is in Version 1.0' , color=0xff0000)
@@ -34,6 +32,7 @@ async def idea(context):
   myEmbed.set_footer(text="Created by OsamaBinNaughty & Chrisadilla")
 
   await context.message.channel.send(embed= myEmbed)
+
 
 @client.event
 async def on_ready():
