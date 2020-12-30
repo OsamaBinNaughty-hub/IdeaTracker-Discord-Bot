@@ -7,7 +7,7 @@ client = commands.Bot(command_prefix='$')
 
 @client.command(name='idea')
 async def idea(context, arg1, arg2, arg3=""):
-  botTest_channel=client.get_channel(785290698710056990)
+  ideaSubmissions_channel=client.get_channel(793625871243280435)
   emoji="\N{THUMBS UP SIGN}"
   name = ""
   if arg3=="":
@@ -18,7 +18,7 @@ async def idea(context, arg1, arg2, arg3=""):
   myEmbed = discord.Embed(title=arg1, description=arg2, color=0x00ff00)
   myEmbed.set_author(name=name)
   await context.message.author.send('Your **{}** idea has been added!'.format(arg1))
-  message = await botTest_channel.send(embed=myEmbed)
+  message = await ideaSubmissions_channel.send(embed=myEmbed)
 
   
 
@@ -38,18 +38,18 @@ async def idea(context):
 async def on_ready():
   print('We have logged in as {0.user}'
   .format(client))
-  botTest_channel=client.get_channel(785290698710056990)
+  botTest_channel=client.get_channel(793898817061126225)
   await botTest_channel.send('Beep beep boob, I am alive!')
 
   await client.change_presence(status=discord.Status.online, activity='Brainstorming')
 
 @client.event
 async def on_message(message):
-  botTest_channel=client.get_channel(785290698710056990)
+  botTest_channel=client.get_channel(793898817061126225)
   if message.author == client.user:
     return
 
   await client.process_commands(message)
-  
+   
 
 client.run(os.getenv('TOKEN'))
