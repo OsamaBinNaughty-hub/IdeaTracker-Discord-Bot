@@ -49,14 +49,14 @@ async def imIn(ctx, arg1):
     await channel.send(randomGif)
 
 @bot.command(name='imin')
-async def imIn(ctx, arg1):
+async def imIn(ctx):
     channel = bot.get_channel(channelId)
     randomGif = gifs[randint(0,len(gifs)-1)]
     await channel.send("<@{}> is in!".format(ctx.author.id)) 
     await channel.send(randomGif)
 
 @bot.command(name='Imin')
-async def imIn(ctx, arg1):
+async def imIn(ctx):
     channel = bot.get_channel(channelId)
     randomGif = gifs[randint(0,len(gifs)-1)]
     await channel.send("<@{}> is in!".format(ctx.author.id)) 
