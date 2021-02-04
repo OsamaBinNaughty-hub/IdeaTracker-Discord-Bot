@@ -10,7 +10,7 @@ client = commands.Bot(command_prefix='$')
 
 @client.command(name='idea')
 async def idea(context, arg1, arg2, arg3=""):
-  ideaSubmissions_channel=client.get_channel(793898817061126225)
+  ideaSubmissions_channel=client.get_channel(793625871243280435)
   emoji="\N{THUMBS UP SIGN}"
   name = ""
   if arg3=="":
