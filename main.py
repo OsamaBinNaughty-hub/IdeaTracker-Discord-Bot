@@ -2,12 +2,15 @@ import discord
 import os
 from discord.ext import commands
 import re
+from dotenv import load_dotenv
+
+load_dotenv()
 
 client = commands.Bot(command_prefix='$')
 
 @client.command(name='idea')
 async def idea(context, arg1, arg2, arg3=""):
-  ideaSubmissions_channel=client.get_channel(793625871243280435)
+  ideaSubmissions_channel=client.get_channel(806895199636553740)
   emoji="\N{THUMBS UP SIGN}"
   name = ""
   if arg3=="":
@@ -38,14 +41,14 @@ async def idea(context):
 async def on_ready():
   print('We have logged in as {0.user}'
   .format(client))
-  botTest_channel=client.get_channel(793898817061126225)
+  botTest_channel=client.get_channel(806895199636553740)
   await botTest_channel.send('Beep beep boob, I am alive!')
 
   await client.change_presence(status=discord.Status.online, activity='Brainstorming')
 
 @client.event
 async def on_message(message):
-  botTest_channel=client.get_channel(793898817061126225)
+  botTest_channel=client.get_channel(806895199636553740)
   if message.author == client.user:
     return
 
