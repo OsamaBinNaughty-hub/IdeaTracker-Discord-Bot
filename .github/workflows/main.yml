@@ -14,4 +14,4 @@ jobs:
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "flutter-sprints-discord-bot"
-          heroku_email: "Dries.Van.Den.Brande@outlook.com"
+          heroku_email: ${{secrets.HEROKU_EMAIL}}
