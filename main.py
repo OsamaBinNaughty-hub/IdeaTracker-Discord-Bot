@@ -38,6 +38,33 @@ async def on_ready():
   botTest_channel=bot.get_channel("CHANNEL ID IN INT")
   await botTest_channel.send('Beep beep boob, I am alive!')
   await bot.change_presence(status=discord.Status.online, activity='Brainstorming')
+  
+# start here for debugging                       
+client.remove_command("help")
+
+@client.group(invoke_without_command=True)
+async def help(ctx):
+  em = discord.Embed(title="Help", description = "Use $help <command> for extended information on a command.", color = ctx.author.color)
+
+  em.add_field(name = "Flutter Sprints", value="`idea`")
+  em.add_field(name= "Bot", value="``version`")
+
+  await ctx.send(embed=em)
+
+@help.command()
+async def idea(ctx):
+  em = discord.Embed(title="Idea", description = "Adds an idea to the #idea-submissions channel", color = ctx.author.color)
+  em.add_field(name= "**Syntax**", description = "$idea \"idea name\" \"idea description\" ")
+
+  await ctx.send(embed = em)
+   
+@help.command()
+async def version(ctx):
+  em = discord.Embed(title="Version", description = "Shows info about the bot", color = ctx.author.color)
+  em.add_field(name= "**Syntax**", description = "$version")
+
+  await ctx.send(embed = em)
+                      
 
 bot.run('YOUR-TOKEN')
 
