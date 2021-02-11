@@ -24,13 +24,11 @@ async def pomodoro(context, arg1, arg2=''):
   elif(arg1 == 'start'):
     await userCheck(context, client, 15)
 
-
 # Join project command
 @client.command(name='Im')
 async def join(context):
   print('im in')
   return 0
-
 
 # Help command
 client.remove_command('help')
