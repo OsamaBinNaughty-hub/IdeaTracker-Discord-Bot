@@ -39,4 +39,4 @@ async def help(context):
   await context.message.author.send(embed=embed_msg)
 
 # client.run(os.getenv('TOKEN'))  # for heroku only
-client.run("NzkzNjY4NzI2Nzk1OTI3NTcy.X-vnmg.dfLLhQrQkiF3EOsv3036-SiMlsw")
+client.run("TOKEN")
