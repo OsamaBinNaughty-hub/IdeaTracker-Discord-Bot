@@ -1,5 +1,11 @@
 from timer_func import *
 
+help_text="""
+Hello World!
+"""
+
+embed_msg = discord.Embed(title="Command Guide", description=help_text, color=0x00ff00)
+
 async def general_version(context):
     myEmbed = discord.Embed(title="Current Version", description='The bot is in Version 1.0' , color=0xff0000)
     myEmbed.add_field(name="Version Code:", value="v1.0.0", inline=False)
