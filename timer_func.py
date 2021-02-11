@@ -16,7 +16,7 @@ async def timer(context, client, period):
         temp_data = json.loads(open('user.json' , 'r').read())
         temp_data.update(json.loads(assigner(context.message.author.id)))
         open('user.json', 'w').write(json.dumps(temp_data))
-        def stop(m): return m.content == '!stop' and m.author.id == context.message.author.id
+        def stop(m): return m.content == '$stop' and m.author.id == context.message.author.id
         await waiter(client, period * 60, stop)
         await sender(context, "Timer is stopped and reset.")
         removeID(context.message.author.id) 
@@ -25,7 +25,7 @@ async def timer(context, client, period):
         while(True):
             try: 
                 await sender(context, 'Times Up!!!')
-                def done(m): return m.content == '!done' and m.author.id == context.message.author.id
+                def done(m): return m.content == '$done' and m.author.id == context.message.author.id
                 await waiter(client, 5, done)
                 await sender(context, 'Looks like you\'ve completed your training! Go reward yourself a nice warm tea.')
                 removeID(context.message.author.id)
