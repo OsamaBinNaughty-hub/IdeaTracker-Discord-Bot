@@ -1,7 +1,29 @@
 from timer_func import *
 
 help_text="""
-Hello World!
+Hello World, I am Sprinter! 
+Here you may use some of my command for better use
+
+
+**"$idea" command:**
+This command will submit your idea to our #idea-submissions channel in Flutter Sprint server. 
+
+Here's to show you how:
+`$idea "App Idea Name" "Descriptions of the app"`
+ 
+
+**"$timer" command:**
+By default, `$timer start` will only give you 15 minutes.
+
+However, you can make your own timer from 0 to 99 mintues using command like this:
+`$timer start 40` for 40 minutes timer.
+
+When the timer is up, I will nudge you (in personal message) every 5 seconds. Just reply `$done` and it will stop. 
+
+You can also use `$stop` command to stop the timer in the middle of countdown, and timer will be reset.
+
+**More:**
+If you have any new idea for my functionality, you can bring it up in the server. My bot engineer wil help look it up ad make it possible for you and everyone!
 """
 
 embed_msg = discord.Embed(title="Command Guide", description=help_text, color=0x00ff00)
