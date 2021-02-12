@@ -36,5 +36,5 @@ client.remove_command('help')
 async def help(context):
   await context.message.author.send(embed=embed_msg)
 
-# client.run(os.getenv('TOKEN'))  # for heroku only
-client.run("TOKEN")
+client.run(os.getenv('TOKEN'))  # for heroku 
+
