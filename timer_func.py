@@ -7,7 +7,7 @@ async def userCheck(context, client, period):
     if(json.loads(open('user.json' , 'r').read()).get(str(context.message.author.id)) != None): 
         await sender(context, "Only one timer is allowed. Stop & reset if necessary.")  
     else:
-        await sender(context, f"{period} minutes set! Focus on your element bend!" if(period != 15) else "No time set, default timer is 15 minutes! Focus on your element bend!") 
+        await sender(context, f"{period} minutes set! Now focus." if(period != 15) else "No time set, default timer is 15 minutes! Now focus.") 
         await timer(context, client,  period) 
 
 # Does the countdown work as well as remove user once "stop" command is used, or "done" command when time is up.
@@ -27,7 +27,7 @@ async def timer(context, client, period):
                 await sender(context, 'Times Up!!!')
                 def done(m): return m.content == '$done' and m.author.id == context.message.author.id
                 await waiter(client, 5, done)
-                await sender(context, 'Looks like you\'ve completed your training! Go reward yourself a nice warm tea.')
+                await sender(context, 'Looks like you\'ve completed your session! Go reward yourself with a cup of cofee.')
                 removeID(context.message.author.id)
                 break
             except asyncio.TimeoutError:
