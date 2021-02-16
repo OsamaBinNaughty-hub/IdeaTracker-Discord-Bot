@@ -8,7 +8,7 @@ open('user.json','w').write('{"dummy" : "dummy" }')
 # Submit idea
 @client.command(name='idea')
 async def idea(context, arg1, arg2, arg3=r""):
-  await submit_idea(context, client, arg1, arg2, arg3, "CHANNEL ID WITHOUT QUOTATION MARK")
+  await submit_idea(context, client, arg1, arg2, arg3, 793625871243280435)
 
 # Check version
 @client.command(name='version')
